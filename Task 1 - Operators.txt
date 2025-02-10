@@ -1,0 +1,60 @@
+// Assignment Operators :
+public class AssignmentOperators {
+    public static void main(String[] args) {
+               int num = 10;
+               num += 5;  
+        System.out.println("After += : " + num);
+        num -= 3; 
+        System.out.println("After -= : " + num);
+        
+        num *= 2;  
+        System.out.println("After *= : " + num);
+        
+        num /= 4;  
+        System.out.println("After /= : " + num);
+        
+        num %= 3;  
+        System.out.println("After %= : " + num);
+    }
+}
+
+// Arithmetic operators :
+
+class Main {
+    public static void main(String[] args) {
+       int a = 10, b = 5;
+       System.out.println(a + b);  
+       System.out.println(a - b);  
+       System.out.println(a * b);  
+       System.out.println(a / b);  
+       System.out.println(a % b);  
+
+       }
+   }
+
+// Bitwise operators :
+
+class Main {
+    public static void main(String[] args) {
+      int a = 5, b = 3;
+System.out.println(a & b);  
+System.out.println(a | b);  
+System.out.println(a ^ b);  
+System.out.println(~a);     
+System.out.println(a << 1); 
+System.out.println(a >> 1); 
+    }
+}
+
+// Relational operators :
+
+class Main {
+    public static void main(String[] args) {
+      int x = 10, y = 20;
+System.out.println(x == y);  
+System.out.println(x != y);  
+System.out.println(x > y);   
+System.out.println(x < y);   
+
+    }
+}
