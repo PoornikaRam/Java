@@ -1,0 +1,17 @@
+class Car {
+    String brand;
+    int speed;
+    void display() {
+        System.out.println("Car Brand: " + brand);
+        System.out.println("Speed: " + speed + " km/h");
+    }
+}
+
+public class Brand { 
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.speed = 120;
+        myCar.display();
+    }
+}
+
