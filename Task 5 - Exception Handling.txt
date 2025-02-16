@@ -1,0 +1,108 @@
+1. EXCEPTION HANDLING
+
+import java.util.*;
+
+class Numbers {
+
+    public static void main(String[] args) {
+        
+        try {
+            
+            int[] numbers = new int[5];
+            numbers[15] = 30;  
+        } catch (ArrayIndexOutOfBoundsException e) {
+            
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+
+        try {
+           
+            String s = null;
+            System.out.println(s.length()); 
+        } catch (NullPointerException e) {
+            
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+
+        finally {
+            System.out.println("This block always executes, regardless of whether an exception occurred or not.");
+        }
+        
+        System.out.println("Program continues after exception handling.");
+    }
+}
+
+2. CUSTOM EXCEPTION :
+
+import javax.swing.JOptionPane;
+
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);  
+    }
+}
+
+public class CustomExceptionGUIExample {
+
+    
+    public static void checkAge(int age) throws InvalidAgeException {
+        if (age < 18) {
+            throw new InvalidAgeException("Age must be 18 or older. Provided age: " + age);
+        } else {
+            JOptionPane.showMessageDialog(null, "Age is valid.");
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        String input = JOptionPane.showInputDialog("Please enter your age:");
+        
+        try {
+            
+            int age = Integer.parseInt(input);
+            
+            
+            checkAge(age);
+            
+        } catch (NumberFormatException e) {
+            
+            JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid number.");
+        } catch (InvalidAgeException e) {
+            
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
+        JOptionPane.showMessageDialog(null, "Program continues after exception handling.");
+    }
+}
+
+3. INTERFACE :
+
+import javax.swing.*;
+
+public class SimpleProgram {
+
+    public static void main(String[] args) {
+        
+        JFrame frame = new JFrame("Simple Program");
+
+        
+        JButton button = new JButton("Click Me!");
+
+        
+        button.addActionListener(e -> JOptionPane.showMessageDialog(frame, "Hello, world!"));
+
+        
+        frame.setSize(200, 150);  
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        frame.setLayout(null);  
+        button.setBounds(50, 50, 100, 30);  
+        frame.add(button);  
+
+        
+        frame.setVisible(true);
+    }
+}
+
+
+
